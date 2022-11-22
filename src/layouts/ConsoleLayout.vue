@@ -25,7 +25,7 @@ defineProps<{
       class="flex h-10 w-full flex-row items-center justify-center py-20 bg-green-700 text-white"
     >
       <div
-        class="animate-bounce px-2 w-10/12 text-center text-9xl cursor-pointer"
+        class="font-serif animate-bounce px-2 w-10/12 text-center text-9xl cursor-pointer"
       >
         BINGO
       </div>
