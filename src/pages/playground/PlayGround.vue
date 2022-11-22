@@ -7,7 +7,7 @@ import NextNumberButton from "./components/NextNumberButton.vue";
 import GameRefreshButton from "./components/GameRefreshButton.vue";
 import router from "@/router";
 
-const row = 5;
+const row = 15;
 const col = 5;
 const index = ref(0);
 const numbers = ref(Array.from({length: row*col}, (_, i) => i + 1));
