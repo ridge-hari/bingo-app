@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  size: Number;
+  previousNums: Number[];
 }>();
 </script>
 <template>
@@ -10,7 +10,7 @@ defineProps<{
         <div
           class="max-w-sm rounded bg-stone-500 rounded overflow-hidden shadow-lg text-center"
         >
-          <span class="text-6xl">{{ i }}</span>
+          <span class="text-6xl">{{ previousNums[i-1] }}</span>
         </div>
       </div>
     </template>
