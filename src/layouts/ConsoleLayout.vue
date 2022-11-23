@@ -19,16 +19,11 @@ defineProps<{
 
   <div
     v-if="showLinks"
-    class="max-w-screen flex min-h-screen flex-col bg-green-700 text-white"
+    class="max-w-screen flex min-h-screen flex-col bg-slate-700 text-white"
   >
     <header
-      class="flex h-10 w-full flex-row items-center justify-center py-20 bg-green-700 text-white"
+      class="flex h-10 w-full flex-row items-center justify-center py-2 bg-slate-700 text-white"
     >
-      <div
-        class="font-serif animate-bounce px-2 w-10/12 text-center text-9xl cursor-pointer"
-      >
-        BINGO
-      </div>
     </header>
     <RouterView />
   </div>
