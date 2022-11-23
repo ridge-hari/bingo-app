@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.random::after {
+    content: counter(count);
+    animation: counter 2s linear infinite alternate;
+    counter-reset: count 0;
+  }
+  
+  @keyframes counter {
+    1% {
+      counter-increment: count 1;
+    }
+    2% {
+        counter-increment: count 2;
+    }
+    10% {
+      counter-increment: count 8;
+    }
+    20% {
+      counter-increment: count 12;
+    }
+    30% {
+      counter-increment: count 18;
+    }
+    40% {
+      counter-increment: count 26;
+    }
+    50% {
+      counter-increment: count 37;
+    }
+    60% {
+      counter-increment: count 41;
+    }
+    70% {
+      counter-increment: count 46;
+    }
+    80% {
+      counter-increment: count 52;
+    }
+    90% {
+        counter-increment: count 67;
+    }
+    100% {
+         counter-increment: count 75;
+    }
+  }
+  
