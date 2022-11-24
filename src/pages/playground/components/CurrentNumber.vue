@@ -6,14 +6,14 @@ defineProps<{
 </script>
 
 <template>
-  <div v-if="currentNum!=0" class="flex items-center justify-center rounded-lg bg-yellow-600 shadow-lg">
-    <span v-if="isShowAnimation" class="random font-serif text-8xl text-black mb-5"></span>
-    <span v-else class="font-serif text-9xl text-black mb-5">{{currentNum}}</span>
+  <div v-if="currentNum!=0" class="flex items-center justify-center bg-yellow-600 shadow-lg aspect-[3/1]">
+    <span v-if="isShowAnimation" class="random font-serif text-8xl text-black"></span>
+    <span v-else class="font-serif text-9xl text-black">{{ currentNum }}</span>
   </div>
-  <div v-else class="flex items-center justify-center rounded-lg bg-yellow-600 shadow-lg">
-    <span v-if="isShowAnimation" class="random font-serif text-8xl text-black mb-5"></span>
-    <span v-else class="font-serif text-9xl text-black mb-5">
-      <vue-feather type="smile" size="100"></vue-feather>
+  <div v-else class="flex items-center justify-center bg-yellow-600 shadow-lg aspect-[3/1]">
+    <span v-if="isShowAnimation" class="random font-serif text-8xl text-black"></span>
+    <span v-else class="font-serif text-9xl text-black">
+      --
     </span>
   </div>
 </template>
