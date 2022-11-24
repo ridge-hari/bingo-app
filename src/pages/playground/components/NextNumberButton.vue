@@ -4,7 +4,7 @@
     type="button"
     id="next"
   >
-    <vue-feather type="arrow-right-circle" size="50"></vue-feather>
+    <vue-feather type="play" size="50" class="animate-pulse"></vue-feather>
   </div>
 </template>
 
