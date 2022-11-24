@@ -17,6 +17,7 @@ const currentNum = ref(0);
 const previousNums = ref([0, 0, 0]);
 const isShowAnimation = ref(false);
 const isButtonDisabled = ref(false);
+const isVisible = ref(false);
 
 const showAnimation = () => {
   return new Promise( resolve => setTimeout(resolve, 2000) );
@@ -60,24 +61,24 @@ const onClickRefreshButton = () => {
 <template>
   <div class="flex">
     <div class="w-1/2">
-      <div class="flex justify-center">
-        <PlayBoard :numbers="numbers" :row="row" :col="col" :fetchableNumbers="fetchableNumbers"/>
+      <div class="flex justify-end mr-24 p-4">
+        <PlayBoard :numbers="numbers" :row="row" :col="col" :fetchableNumbers="fetchableNumbers" :isVisible="isVisible"/>
       </div>
     </div>
-    <div class="w-1/2">
-      <div class="flex justify-center">
+    <div class="w-1/2 flex justify-start p-4">
+      <div class="flex flex-row mr-24 p-4">
         <div>
-          <div class="bg-slate-700 rounded-lg mb-12 drop-shadow-2xl">
-            <span class="font-serif text-yellow-400 text-xl">履歴番号:</span>
+          <div class="bg-slate-200 mb-12 drop-shadow-xl ring-2 dark:ring-yellow-500">
+            <span class="font-serif text-slate-800 text-xl">履歴数字</span>
             <PreviousNumbers :previousNums="previousNums" />
           </div>
-          <div class="bg-slate-700 mb-24 drop-shadow-2xl aspect-[3/1]">
-            <span class="font-serif text-yellow-400 text-2xl">現在番号:</span>
+          <div class="bg-slate-200 mb-24 drop-shadow-2xl aspect-[3/1] ring-4 dark:ring-yellow-600">
+            <span class="font-serif text-slate-800 text-2xl">現在数字</span>
             <CurrentNumber :currentNum="currentNum" :isShowAnimation="isShowAnimation"/>
           </div>
-          <div class="flex justify-between mx-12">
-            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-yellow-600 to-slate-500 group-hover:from-yellow-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+          <div class="flex justify-between">
+            <button class="w-56 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-yellow-600 to-slate-500 group-hover:from-yellow-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+              <span class="w-56 relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 <NextNumberButton :onclick="onClickNextButton " />
               </span>
             </button>
@@ -88,6 +89,16 @@ const onClickRefreshButton = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div class="flex flex-col p-4 drop-shadow-2xl bg-slate-600">
+        <p class="text-right">
+          <vue-feather type="settings" class="text-yellow-600" size="25" />
+        </p>
+        <label class="inline-flex relative items-center mr-10 cursor-pointer mt-5">
+          <input type="checkbox" value="" class="sr-only peer" @change="isVisible=(!isVisible)">
+          <div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 ring-yellow-600 ring-1 peer-focus:ring-yellow-200 dark:peer-focus:ring-yellow-600 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-600"></div>
+          <span class="ml-3 text-sm font-medium text-slate-200">数字表示</span>
+        </label>
       </div>
     </div>
   </div>
