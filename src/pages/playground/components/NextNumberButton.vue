@@ -1,10 +1,10 @@
 <template>
   <div
-    class="text-blue-400 hover:cursor-pointer"
+    class="hover:cursor-pointer"
     type="button"
     id="next"
   >
-    <vue-feather type="play" size="50" class="animate-pulse"></vue-feather>
+    <vue-feather type="play" size="50" class="animate-pulse text-yellow-500"></vue-feather>
   </div>
 </template>
 
