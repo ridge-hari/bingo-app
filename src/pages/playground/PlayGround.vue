@@ -51,31 +51,41 @@ const onClickNextButton = () => {
   })();
 }
 const onClickRefreshButton = () => {
-  router.go(0);
+  if (confirm('再起動よろしいですか?')) {
+    router.go(0);
+  }
 }
 </script>
 
 <template>
   <div class="flex">
     <div class="w-1/2">
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center">
         <PlayBoard :numbers="numbers" :row="row" :col="col" :fetchableNumbers="fetchableNumbers"/>
       </div>
     </div>
     <div class="w-1/2">
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center">
         <div>
           <div class="bg-slate-700 rounded-lg mb-12 drop-shadow-2xl">
-            <span class="font-serif text-yellow-400 text-2xl">Previous Numbers:</span>
+            <span class="font-serif text-yellow-400 text-xl">履歴番号:</span>
             <PreviousNumbers :previousNums="previousNums" />
           </div>
-          <div class="bg-slate-700 mb-24 drop-shadow-2xl">
-            <span class="font-serif text-yellow-400 text-4xl">Current Number:</span>
+          <div class="bg-slate-700 mb-24 drop-shadow-2xl aspect-[3/1]">
+            <span class="font-serif text-yellow-400 text-2xl">現在番号:</span>
             <CurrentNumber :currentNum="currentNum" :isShowAnimation="isShowAnimation"/>
           </div>
-          <div class="grid grid-cols-2 grid-flow-col gap-4 my-8 h-10">
-            <NextNumberButton :onclick="onClickNextButton " />
-            <GameRefreshButton :onclick="onClickRefreshButton" />
+          <div class="flex justify-between mx-12">
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-yellow-600 to-slate-500 group-hover:from-yellow-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                <NextNumberButton :onclick="onClickNextButton " />
+              </span>
+            </button>
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-600 to-slate-500 group-hover:from-red-600 group-hover:to-slate-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                <GameRefreshButton :onclick="onClickRefreshButton" />
+              </span>
+            </button>
           </div>
         </div>
       </div>
