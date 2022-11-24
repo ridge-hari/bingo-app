@@ -4,12 +4,13 @@ defineProps<{
   row: Number,
   col: Number,
   fetchableNumbers: Number[],
+  isVisible: boolean,
 }>();
 </script>
 
 <template>
   <div>
-    <table class="table-auto">
+    <table class="table-auto shadow-2xl bg-slate-600">
       <thead>
         <tr>
           <th class="font-serif hover:animate-spin cursor-pointer text-4xl text-yellow-400 font-bold px-10 whitespace-nowrap">B</th>
@@ -24,12 +25,12 @@ defineProps<{
           <tr>
             <template v-for="c in col" :key="c">
               <td v-if="fetchableNumbers.includes(numbers[(r-1)*col+(c-1)])"
-                class="font-serif text-xl text-gray-400 font-medium px-10 whitespace-nowrap"
+                class="font-serif text-xl text-gray-400 font-medium px-10 pb-4 whitespace-nowrap"
               >
-                {{ numbers[(r-1)*col+(c-1)] }}
+                {{ isVisible?numbers[(r-1)*col+(c-1)]:"▬" }}
               </td>
               <td v-else
-                class="font-serif text-2xl text-yellow-400 font-medium px-10 whitespace-nowrap"
+                class="font-serif text-2xl text-yellow-400 font-medium px-10 pb-4 whitespace-nowrap"
               >
                 {{ numbers[(r-1)*col+(c-1)] }}
               </td>
