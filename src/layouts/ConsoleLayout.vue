@@ -19,7 +19,7 @@ defineProps<{
 
   <div
     v-if="showLinks"
-    class="max-w-screen flex min-h-screen flex-col bg-slate-700 text-white"
+    class="max-w-screen flex min-h-screen flex-col bg-slate-700 text-white cursor-pointer"
   >
     <header
       class="flex h-10 w-full flex-row items-center justify-center py-2 bg-slate-700 text-white"
