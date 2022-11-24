@@ -1,10 +1,10 @@
 <template>
   <div
-    class="text-blue-400 hover:cursor-pointer"
+    class="hover:cursor-pointer"
     type="button"
     id="refresh"
   >
-    <vue-feather type="refresh-ccw" class="text-red-600" size="50"></vue-feather>
+    <vue-feather type="refresh-ccw" class="text-red-500" size="50"></vue-feather>
   </div>
 </template>
 
