@@ -72,7 +72,7 @@ const onClickRefreshButton = () => {
             <span class="font-serif text-slate-800 text-xl">履歴数字</span>
             <PreviousNumbers :previousNums="previousNums" />
           </div>
-          <div class="bg-slate-200 mb-24 drop-shadow-2xl aspect-[3/1] ring-4 dark:ring-yellow-600">
+          <div class="bg-slate-200 mb-24 drop-shadow-2xl aspect-[3/2] ring-4 dark:ring-yellow-600">
             <span class="font-serif text-slate-800 text-2xl">現在数字</span>
             <CurrentNumber :currentNum="currentNum" :isShowAnimation="isShowAnimation"/>
           </div>
