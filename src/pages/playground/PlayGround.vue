@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import PlayBoard from "./components/PlayBoard.vue";
-import { computed, ref } from "vue";
 import PreviousNumbers from "./components/PreviousNumbers.vue";
 import CurrentNumber from "./components/CurrentNumber.vue";
 import NextNumberButton from "./components/NextNumberButton.vue";
 import GameRefreshButton from "./components/GameRefreshButton.vue";
+import { ref } from "vue";
 import router from "@/router";
 
 const row = 15;
@@ -24,7 +24,7 @@ const showAnimation = () => {
 }
 const onClickNextButton = () => {
   if(isEmpty.value) {
-    alert("All the numbers has already been fetched!!! Please refresh the Game.");
+    alert("すべての数字はすでに取得されています!!! ゲームを再起動してください。");
     return;
   }
   if (isButtonDisabled.value) {
